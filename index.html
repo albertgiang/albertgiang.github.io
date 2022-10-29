@@ -38,14 +38,27 @@
                 axis: 20 // meters in all 4 directions
             })
 
+            const fenceC = new SquareGeofenceRegion({
+                name: 'berkeleymarinafence',
+                latitude: 37.86982187921138, 
+                longitude:  -122.31400613417765,
+                axis: 1240 // meters in all 4 directions
+            })
+
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
                 variable1.innerHTML += "<br>inside Moffitt"
             } else {
                 variable1.innerHTML += "<br>outside Moffitt"
             }
 
-            variable1.innerHTML += "<br>Moffit latitude boundaries: " + fenceB.latitude - fenceB.axis + " and " + fenceB.latitude + fenceB.axis
-            variable1.innerHTML += "<br>Moffit longitude boundaries: " + fenceB.longitude - fenceB.axis + " and " + fenceB.longitude + fenceB.axis
+            if (fenceC.inside(pos.coords.latitude, pos.coords.longitude)) {
+                variable1.innerHTML += "<br>inside Marina"
+            } else {
+                variable1.innerHTML += "<br>outside Marina"
+            }
+
+            // variable1.innerHTML += "<br>Moffit latitude boundaries: " + fenceB.latitude - fenceB.axis + " and " + fenceB.latitude + fenceB.axis
+            // variable1.innerHTML += "<br>Moffit longitude boundaries: " + fenceB.longitude - fenceB.axis + " and " + fenceB.longitude + fenceB.axis
         }
 
         // https://stackoverflow.com/questions/50453003/html5-geolocation-api-with-geofencing
