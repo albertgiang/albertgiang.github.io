@@ -35,14 +35,14 @@
                 name: 'moffittfence',
                 latitude: 37.872566543253484,
                 longitude:  -122.26079961589765,
-                axis: 20 // meters in all 4 directions
+                axis: 0.2 // meters in all 4 directions
             })
 
             const fenceC = new SquareGeofenceRegion({
                 name: 'berkeleymarinafence',
                 latitude: 37.86982187921138, 
                 longitude:  -122.31400613417765,
-                axis: 1240 // meters in all 4 directions
+                axis: 12.4 // meters in all 4 directions
             })
 
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
