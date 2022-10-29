@@ -32,7 +32,7 @@
             pos.coords.longitude;
 
             const fenceB = new SquareGeofenceRegion({
-                name: 'myfence',
+                name: 'moffittfence',
                 latitude: 37.872566543253484,
                 longitude:  -122.26079961589765,
                 axis: 20 // meters in all 4 directions
@@ -43,6 +43,9 @@
             } else {
                 variable1.innerHTML += "<br>outside Moffitt"
             }
+
+            variable1.innerHTML += "<br>Moffit latitude boundaries:" + fenceB.latitude - fenceB.axis + " and " + fenceB.latitude + fenceB.axis
+            variable1.innerHTML += "<br>Moffit longitude boundaries:" + fenceB.longitude - fenceB.axis + " and " + fenceB.longitude + fenceB.axis
         }
 
         // https://stackoverflow.com/questions/50453003/html5-geolocation-api-with-geofencing
@@ -79,26 +82,28 @@
             }
         }
 
-        const fenceA = new CircularGeofenceRegion({
-        name: 'myfence',
-        latitude: 59.345635,
-        longitude: 18.059707,
-        radius: 1000 // meters
-        });
+        // const fenceA = new CircularGeofenceRegion({
+        // name: 'myfence',
+        // latitude: 59.345635,
+        // longitude: 18.059707,
+        // radius: 1000 // meters
+        // });
 
-        const fences = [fenceA, fenceB]
-        const options = {}
+        // const fences = [fenceA, fenceB]
+        // const fences = [fenceB]
+        // const options = {}
 
-        navigator.geolocation.watchPosition(({coords}) => {
-        for (const fence of fences) {
-            const lat = coords.latitude
-            const lon = coords.longitude
+        // navigator.geolocation.watchPosition(({coords}) => {
+        // for (const fence of fences) {
+        //     const lat = coords.latitude
+        //     const lon = coords.longitude
 
-            if (fence.inside(lat, lon)) {
-            // do some logic
-            }
-        }
-        }, console.error, options);
+        //     if (fence.inside(lat, lon)) {
+        //     // do some logic
+
+        //     }
+        // }
+        // }, console.error, options);
 
 
       </script>
