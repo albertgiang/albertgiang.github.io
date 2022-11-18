@@ -52,6 +52,13 @@
                 axis: 32.6 // meters in all 4 directions
             })
 
+            const fenceE = new SquareGeofenceRegion({
+                name: 'westoaklandbartfence',
+                latitude: 37.8049, 
+                longitude:  122.2952,
+                axis: 110 // meters in all 4 directions
+            })
+
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
                 variable1.innerHTML += "<br>inside Moffitt"
             } else {
@@ -68,6 +75,12 @@
                 variable1.innerHTML += "<br>inside Times Square"
             } else {
                 variable1.innerHTML += "<br>outside Times Square"
+            }
+
+            if (fenceE.inside(pos.coords.latitude, pos.coords.longitude)) {
+                variable1.innerHTML += "<br>inside West Oakland BART"
+            } else {
+                variable1.innerHTML += "<br>outside West Oakland BART"
             }
 
             // variable1.innerHTML += "<br>Moffit latitude boundaries: " + fenceB.latitude - fenceB.axis + " and " + fenceB.latitude + fenceB.axis
