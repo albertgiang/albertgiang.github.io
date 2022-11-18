@@ -31,17 +31,24 @@
             "<br>Longitude: " +
             pos.coords.longitude;
 
+            const fenceA = new SquareGeofenceRegion({
+                name: 'socialscifence',
+                latitude: 37.8701,
+                longitude: 122.2580,
+                axis: 30 // meters in all 4 directions
+            })
+
             const fenceB = new SquareGeofenceRegion({
                 name: 'moffittfence',
-                latitude: 37.872566543253484,
-                longitude:  -122.26079961589765,
+                latitude: 37.8725,
+                longitude: 122.2608,
                 axis: 0.2 // meters in all 4 directions
             })
 
             const fenceC = new SquareGeofenceRegion({
                 name: 'berkeleymarinafence',
-                latitude: 37.86982187921138, 
-                longitude:  -122.31400613417765,
+                latitude: 37.8653, 
+                longitude:  122.3111,
                 axis: 12.4 // meters in all 4 directions
             })
 
@@ -58,6 +65,12 @@
                 longitude:  122.2952,
                 axis: 110 // meters in all 4 directions
             })
+
+            if (fenceA.inside(pos.coords.latitude, pos.coords.longitude)) {
+                variable1.innerHTML += "<br>inside Social Sciences Building"
+            } else {
+                variable1.innerHTML += "<br>outside Social Sciences Building"
+            }
 
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
                 variable1.innerHTML += "<br>inside Moffitt"
