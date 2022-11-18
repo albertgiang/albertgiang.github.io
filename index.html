@@ -45,6 +45,13 @@
                 axis: 12.4 // meters in all 4 directions
             })
 
+            const fenceD = new SquareGeofenceRegion({
+                name: 'timesquarefence',
+                latitude: 40.7580, 
+                longitude:  73.9855,
+                axis: 32.6 // meters in all 4 directions
+            })
+
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
                 variable1.innerHTML += "<br>inside Moffitt"
             } else {
@@ -55,6 +62,12 @@
                 variable1.innerHTML += "<br>inside Marina"
             } else {
                 variable1.innerHTML += "<br>outside Marina"
+            }
+
+            if (fenceD.inside(pos.coords.latitude, pos.coords.longitude)) {
+                variable1.innerHTML += "<br>inside Times Square"
+            } else {
+                variable1.innerHTML += "<br>outside Times Square"
             }
 
             // variable1.innerHTML += "<br>Moffit latitude boundaries: " + fenceB.latitude - fenceB.axis + " and " + fenceB.latitude + fenceB.axis
