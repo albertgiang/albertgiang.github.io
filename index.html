@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>test test test title test test test</h1>
-    <p>filler filler filler filler filler </p>
-    <p>filler filler filler filler filler </p>
-    <p>filler filler filler filler filler </p>
+    <h1>All Time </h1>
+    <p>Location </p>
+    <p>Testing </p>
 
     <button class="locationButton" onclick="getlocation()">
         Get Location
@@ -25,7 +24,9 @@
         }
 
         function showLoc(pos) {
+        
           variable1.innerHTML =
+            "Location Found! <br>" +
             "Latitude: " +
             pos.coords.latitude +
             "<br>Longitude: " +
