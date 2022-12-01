@@ -32,7 +32,7 @@
             pos.coords.longitude;
 
             const fenceA = new SquareGeofenceRegion({
-                name: 'socialscifence',
+                name: 'bechtel',
                 latitude: 37.8701,
                 longitude: -122.2580,
                 axis: 30 // meters in all 4 directions
@@ -67,9 +67,9 @@
             })
 
             if (fenceA.inside(pos.coords.latitude, pos.coords.longitude)) {
-                variable1.innerHTML += "<br>inside Social Sciences Building"
+                variable1.innerHTML += "<br>inside Bechtel Engineering Center"
             } else {
-                variable1.innerHTML += "<br>outside Social Sciences Building"
+                variable1.innerHTML += "<br>outside Bechtel Engineering Center"
             }
 
             if (fenceB.inside(pos.coords.latitude, pos.coords.longitude)) {
